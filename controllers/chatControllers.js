@@ -17,7 +17,7 @@ const accessChat = asyncHandler(async(req,res)=>{
     }).populate("users","-password")
     .populate("latestMessage","-password")
 
-    isChat=await User.populate(isChat,{path:"latestMessage.sender",select:"name pic email"})
+    isChat=await User.populate(isChat,{path:"latestMessage.sender",select:"name picture email"})
    if(isChat.length>0){
     res.send(isChat[0])
    }else{
@@ -48,7 +48,7 @@ const fetchChats = asyncHandler(async(req,res)=>{
         .then(async(result)=>{
             result= await User.populate(result,{
                 path:"latestMesssage.sender",
-                select:"name pic email"})
+                select:"name picture email"})
                 res.status(200).send(result)
         }) 
        
