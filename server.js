@@ -35,9 +35,9 @@ const server = app.listen(PORT,console.log("server running on "+PORT.yellow.bold
 
 const io =require('socket.io')(server,{
         pingTimeout:60000,
-        cors:{
-                origin:"http://localhost:3000"
-        }
+        // cors:{
+        //         origin:"http://localhost:3000"
+        // }
 })
 
 io.on("connection",(socket)=>{
