@@ -18,7 +18,7 @@ mongoose.connect(process.env.DB,{useNewUrlParser:true})
 app.use((req, res, next) => {
         res.header('Access-Control-Allow-Methods','*')
         res.header('Access-Control-Allow-Origin','*');
-        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept,Authorization,token');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept,Authorization,token,origin');
         next();
         });
 
@@ -36,7 +36,7 @@ const server = app.listen(PORT,console.log("server running on "+PORT.yellow.bold
 const io =require('socket.io')(server,{
         pingTimeout:60000,
         cors:{
-                origin:"https://lets-talk-skandalev.netlify.app"
+                origin:"*"
         }
 })
 
