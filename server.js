@@ -38,7 +38,6 @@ const io =require('socket.io')(server,{
         cors:{
                 origin:"https://lets-talk-skandalev.netlify.app",
                 methods: ["GET", "POST","PUT"],
-                credentials: true
         }
 })
 
